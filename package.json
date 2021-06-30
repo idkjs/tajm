@@ -4,17 +4,8 @@
   "author": "Rasmus Holm",
   "license": "MIT",
   "description": "A ReasonML library to handle most needs when time and dates are needed.",
-  "category" : "library",
-  "keywords": [
-    "reason",
-    "reasonml",
-    "bucklescript",
-    "date",
-    "time",
-    "datetime",
-    "iana",
-    "timezone"
-  ],
+  "category": "library",
+  "keywords": [ "reason", "reasonml", "bucklescript", "date", "time", "datetime", "iana", "timezone" ],
   "homepage": "https://github.com/crholm/tajm#README.md",
   "bugs": "https://github.com/crholm/tajm/issues",
   "repository": {
@@ -25,13 +16,19 @@
     "clean": "bsb -clean-world",
     "build:iana": "./iana.sh",
     "build:bsb": "bsb -clean-world && bsb -make-world",
-    "build": "npm run build:iana && npm run build:bsb",
-    "test": "bsb && jest"
+    "watch": "bsb -make-world -w",
+    "build": "npm run build:iana && npm run bsb -make-world",
+    "test-watch": "node ./node_modules/jest/bin/jest.js --watchAll",
+    "test": "jest"
   },
-
   "devDependencies": {
-    "@glennsl/bs-jest": "^0.5.1",
-    "bs-platform": "^8.2.0",
-    "bs-glob": "github:reasonml-community/bs-glob"
-  }
+
+    "@glennsl/bs-jest": "^0.7.0",
+    "bs-glob": "github:reasonml-community/bs-glob",
+    "bs-platform": "^9.0.2",
+    "jest": "^26.6.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testRegex": "test.bs.js"  }
 }

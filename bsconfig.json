@@ -16,10 +16,12 @@
       "subdirs": true
     }
   ],
-  "bs-dev-dependencies": [
-    "@glennsl/bs-jest",
-    "bs-glob"
-  ],
+  "suffix": ".bs.js",
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+  "bs-dev-dependencies": [ "@glennsl/bs-jest", "bs-glob" ],
   "warnings": {
     "number": "+A-42-48",
     "error": "+A-3-44-102"
